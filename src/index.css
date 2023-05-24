@@ -1,0 +1,25 @@
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bs-emphasis-color: white;
+  --bs-secondary-color: rgba(194, 255, 180, 0.75);
+}
+
+body {
+  background-color: rgb(0, 21, 23);
+  color: white;
+}
+
+::placeholder {
+  color: black !important;
+}
+
+.footer-wrapper {
+  background-color: #003a40;
+}
