@@ -1,6 +1,7 @@
 import React from "react";
+import PropTypes from "prop-types";
 
-function Navbar() {
+function Navbar(props) {
   return (
     <>
       <header className="p-3 text-bg-dark">
@@ -57,9 +58,13 @@ function Navbar() {
             </ul>
 
             <div className="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
-              <div className="form-control form-control-dark text-bg-dark">
-                Task tracker
-              </div>
+              {props.namde ? (
+                <div className="form-control form-control-dark text-bg-dark">
+                  {props.title}
+                </div>
+              ) : (
+                "namde failed"
+              )}
             </div>
           </div>
         </div>
@@ -67,5 +72,14 @@ function Navbar() {
     </>
   );
 }
+
+Navbar.propTypes = {
+  title: PropTypes.string,
+  namde: PropTypes.bool.isRequired,
+};
+
+Navbar.defaultProps = {
+  title: "default title",
+};
 
 export default Navbar;
