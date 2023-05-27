@@ -1,8 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import "../App.css";
 
 function Navbar(props) {
+  const location = useLocation();
   return (
     <>
       <header className="p-3 text-bg-dark">
@@ -32,28 +34,39 @@ function Navbar(props) {
 
             <ul className="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0 ml-10 ">
               <li>
-                <Link to="/" className="nav-link px-2 text-secondary">
+                <Link
+                  to="/"
+                  className={
+                    location.pathname === "/"
+                      ? "nav-link px-2 active"
+                      : "nav-link px-2 text-white"
+                  }
+                >
                   Home
                 </Link>
               </li>
               <li>
-                <Link to="/features" className="nav-link px-2 text-white">
+                <Link
+                  to="/features"
+                  className={
+                    location.pathname === "/features"
+                      ? "nav-link px-2 active"
+                      : "nav-link px-2 text-white"
+                  }
+                >
                   Features
                 </Link>
               </li>
               <li>
-                <Link to="/pricing" className="nav-link px-2 text-white">
+                <Link
+                  to="/pricing"
+                  className={
+                    location.pathname === "/pricing"
+                      ? "nav-link px-2 active "
+                      : "nav-link px-2 text-white"
+                  }
+                >
                   Pricing
-                </Link>
-              </li>
-              <li>
-                <Link to="#" className="nav-link px-2 text-white">
-                  FAQs
-                </Link>
-              </li>
-              <li>
-                <Link to="#" className="nav-link px-2 text-white">
-                  About
                 </Link>
               </li>
             </ul>

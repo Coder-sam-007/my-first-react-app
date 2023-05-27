@@ -11,7 +11,10 @@ export const Todos = (props) => {
       <h2 className="text-center">My Todos List</h2>
       <hr />
       {props.todos.length === 0 ? (
-        <h3 className="text-center">All Todo Items are Completed!</h3>
+        <h3 className="text-center">
+          TODOs List is empty! <br /> Create some.. <br /> <br /> Wishing you a
+          productive day...
+        </h3>
       ) : (
         props.todos.map((todo) => {
           return (

@@ -16,3 +16,9 @@
   background-color: aquamarine;
   color: black;
 }
+
+.active,
+.nav-link:focus,
+.nav-link:hover {
+  color: cyan;
+}
