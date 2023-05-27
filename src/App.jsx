@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import Test from "./components/otherComponents";
 import Navbar from "./components/Navbar";
 import Hero from "./components/hero";
 import Features from "./components/features";
@@ -7,6 +6,8 @@ import Footer from "./components/Footer";
 import { Todos } from "./components/todos";
 import { AddTodo } from "./components/AddTodo";
 import "./App.css";
+import Pricing from "./components/pricing";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   let initTodo;
@@ -41,13 +42,28 @@ function App() {
 
   return (
     <>
-      <Test />
-      <Navbar title="Task tracker" namde={true} />
-      <Hero />
-      <Features />
-      <AddTodo addTodo={addTodo} />
-      <Todos todos={todos} onDelete={handleDelete} />
-      <Footer />
+      <Router>
+        <Navbar title="Task tracker" namde={true} />
+
+        <Routes>
+          <Route exact path="/features" element={<Features />} />
+
+          <Route
+            exact
+            path="/"
+            element={
+              <>
+                <Hero />
+                <AddTodo addTodo={addTodo} />
+                <Todos todos={todos} onDelete={handleDelete} />
+              </>
+            }
+          />
+
+          <Route exact path="/pricing" element={<Pricing />} />
+        </Routes>
+        <Footer />
+      </Router>
     </>
   );
 }

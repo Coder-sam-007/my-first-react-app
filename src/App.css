@@ -1,0 +1,18 @@
+.pricing-header {
+  max-width: 40rem;
+}
+
+.card {
+  width: 25%;
+  color: white;
+}
+
+.btn-outline-secondary {
+  border: 1px solid white;
+  color: white;
+}
+
+.btn-outline-secondary:hover {
+  background-color: aquamarine;
+  color: black;
+}

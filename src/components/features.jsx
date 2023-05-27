@@ -1,5 +1,5 @@
 import React from "react";
-import { Feature_card } from "./feature-card";
+import { Feature_card } from "./card";
 
 function Features() {
   return (

@@ -10,7 +10,6 @@ export const AddTodo = (props) => {
     if (!title || !desc) alert("You have forgot title or desc");
 
     props.addTodo(title, desc);
-
     setTitle("");
     setDesc("");
   };
